@@ -121,14 +121,14 @@ select avg("TotalAmount")
 from bills)
 order by "TotalAmount";
 
---18. Modify the appointments table so that any appointment with a NULL status is updated to
+--11. Modify the appointments table so that any appointment with a NULL status is updated to
 --show “Scheduled.”
 
 update appointments
 set "Status" = 'Scheduled'
 where  "Status" IS NULL;
 
---19. Remove all prescription records that belong to appointments marked as “Cancelled.”
+--12. Remove all prescription records that belong to appointments marked as “Cancelled.”
 select * from prescriptions
 select * from doctors
 
