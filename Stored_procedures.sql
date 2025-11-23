@@ -1,4 +1,4 @@
---20. Create a stored procedure that adds a new record to the Doctors table.
+--1. Create a stored procedure that adds a new record to the Doctors table.
 --The procedure should accept the doctor’s ID, first name, last name, specialization, email, and
 --phone number as input parameters.
 --After creating the procedure, call it using a set of sample doctor details to insert a new doctor
@@ -30,7 +30,7 @@ CALL InsertNewDoctor(
 );
 
 
---21. Create a stored procedure that records a new appointment and automatically performs
+--2. Create a stored procedure that records a new appointment and automatically performs
 --validation before inserting.
 --The procedure should accept an appointment ID, patient ID, doctor ID, appointment date, status,
 --and nurse ID.
