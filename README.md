@@ -49,5 +49,4 @@ The main tables used in the queries include:
 
 
 
-```sql
-SET search_path TO hospital;
+
