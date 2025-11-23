@@ -1,4 +1,4 @@
---11. For each patient in the database, identify their most recent appointment and list it along with
+--1. For each patient in the database, identify their most recent appointment and list it along with
 --the patient’s ID.
 
 WITH RankedAppointments AS (
@@ -12,7 +12,7 @@ ORDER BY
 "PatientID";
 
 
---12. For every appointment in the system, assign a sequence number that ranks each patient’s
+--2. For every appointment in the system, assign a sequence number that ranks each patient’s
 --appointments from most recent to oldest.
 
 select "AppointmentID","PatientID","AppointmentDate",
@@ -20,7 +20,7 @@ RANK() OVER (PARTITION BY "PatientID" ORDER BY "AppointmentDate" DESC) AS "Patie
 from appointments
 ORDER by "PatientID", "Patient_Appointment_Rank";
 
---13. Generate a report showing the number of appointments per day for October 2021, including a
+--3. Generate a report showing the number of appointments per day for October 2021, including a
 --running total across the month.
 
 WITH DailyAppointments AS (
@@ -38,7 +38,7 @@ SUM("Daily_Count") OVER (ORDER BY "Appointment_Day") AS "Running_Total"
 from DailyAppointments
 ORDER by "Appointment_Day";
 
---14. Using a temporary query structure, calculate the average, minimum, and maximum total bill
+--4. Using a temporary query structure, calculate the average, minimum, and maximum total bill
 --amount, and then return these values in a single result set.
 
 WITH BillAggregates AS (
@@ -50,7 +50,7 @@ from bills)
 select "Average_Bill_Amount","Minimum_Bill_Amount","Maximum_Bill_Amount"
 from BillAggregates;
 
---15. Build a query that identifies all patients who currently have an outstanding balance, based on
+--5. Build a query that identifies all patients who currently have an outstanding balance, based on
 --information from admissions and billing records.
 
 WITH OutstandingPatients AS (
@@ -67,7 +67,7 @@ join OutstandingPatients OP
 ON P."PatientID" = OP."PatientID"
 ORDER by P."PatientID";
 
---16. Create a query that generates all dates from January 1 to January 15, 2021, and show how
+--6. Create a query that generates all dates from January 1 to January 15, 2021, and show how
 --many appointments occurred on each of those dates.
 with dateseries as (
 select generate_series(
